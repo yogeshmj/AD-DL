@@ -252,7 +252,7 @@ def rank_mean(similarity, tsv, caps_directory):
 
 def save_as_pt(input_img):
     """
-    This function is to transfer nii.gz file into .pt format, in order to train the pytorch model more efficient when loading the data.
+    This function is to transfer nii.gz file into .pt format, in order to train the classifiers model more efficient when loading the data.
     :param input_img:
     :return:
     """
@@ -265,11 +265,9 @@ def save_as_pt(input_img):
     ## make sure the tensor dtype is torch.float32
     output_file = os.path.join(os.path.dirname(input_img), input_img.split('.nii.gz')[0] + '.pt')
     # save
-    torch.save(image_tensor, output_file)
+    torch.save(image_tensor.clone(), output_file)
 
     return output_file
-
-
 
 
 
