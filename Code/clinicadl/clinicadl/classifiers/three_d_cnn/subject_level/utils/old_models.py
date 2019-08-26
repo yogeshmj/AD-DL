@@ -1,4 +1,5 @@
-from utils.modules import *
+from modules import PadMaxPool3d, Flatten
+from torch import nn
 
 
 class Test2_batch(nn.Module):
